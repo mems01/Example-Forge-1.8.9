@@ -7,6 +7,7 @@ plugins {
     id("dev.deftu.gradle.tools.shadow") version(dgtVersion)
     id("dev.deftu.gradle.tools.blossom") version(dgtVersion)
     id("dev.deftu.gradle.tools.minecraft.loom") version(dgtVersion)
+    id("dev.deftu.gradle.tools.resources") version(dgtVersion)
 }
 
 toolkit.useDevAuth()

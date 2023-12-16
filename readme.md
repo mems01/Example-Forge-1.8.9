@@ -3,3 +3,5 @@
 I love using [DGT](https://github.com/Deftu/Gradle-Toolkit/) for my projects.
 
 Make sure your gradle jvm is set to java 17 and project jdk to java 8, any java distribution should work.
+
+look at the main branch for java example.

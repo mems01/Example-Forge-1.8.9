@@ -2,8 +2,10 @@ import dev.deftu.gradle.utils.GameSide
 
 plugins {
     java
+    kotlin("jvm") version("1.9.21")
     val dgtVersion = "1.22.0"
     id("dev.deftu.gradle.tools") version(dgtVersion)
+    id("dev.deftu.gradle.tools.kotlin") version(dgtVersion)
     id("dev.deftu.gradle.tools.shadow") version(dgtVersion)
     id("dev.deftu.gradle.tools.blossom") version(dgtVersion)
     id("dev.deftu.gradle.tools.minecraft.loom") version(dgtVersion)
@@ -27,6 +29,8 @@ repositories {
 }
 
 dependencies {
+    implementation(shade(kotlin("stdlib"))!!)
+
     implementation(shade("net.fabricmc:sponge-mixin:0.12.5+mixin.0.8.5") {
         exclude(module = "launchwrapper")
         exclude(module = "guava")

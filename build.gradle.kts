@@ -12,6 +12,12 @@ plugins {
     id("dev.deftu.gradle.tools.resources") version(dgtVersion)
 }
 
+loom {
+    forge {
+        pack200Provider.set(dev.architectury.pack200.java.Pack200Adapter())
+    }
+}
+
 toolkit.useDevAuth()
 
 toolkitLoomHelper  {

@@ -2,18 +2,12 @@ import dev.deftu.gradle.utils.GameSide
 
 plugins {
     java
-    val dgtVersion = "1.22.0"
+    val dgtVersion = "1.22.4"
     id("dev.deftu.gradle.tools") version(dgtVersion)
     id("dev.deftu.gradle.tools.shadow") version(dgtVersion)
     id("dev.deftu.gradle.tools.blossom") version(dgtVersion)
     id("dev.deftu.gradle.tools.minecraft.loom") version(dgtVersion)
     id("dev.deftu.gradle.tools.resources") version(dgtVersion)
-}
-
-loom {
-    forge {
-        pack200Provider.set(dev.architectury.pack200.java.Pack200Adapter())
-    }
 }
 
 toolkit.useDevAuth()
@@ -27,16 +21,13 @@ toolkitLoomHelper  {
 }
 
 repositories {
-    maven("https://maven.fabricmc.net/")
+    maven("https://repo.spongepowered.org/maven/")
     maven("https://maven.deftu.dev/releases")
     mavenCentral()
 }
 
 dependencies {
-    implementation(shade("net.fabricmc:sponge-mixin:0.12.5+mixin.0.8.5") {
-        exclude(module = "launchwrapper")
-        exclude(module = "guava")
-        exclude(module = "gson")
-        exclude(module = "commons-io")
+    implementation(shade("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
+        isTransitive = false
     })
 }
